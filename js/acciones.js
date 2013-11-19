@@ -13,7 +13,17 @@ document.addEventListener("deviceready", function(){
 		});//ejecutar
 		
 	});//crear
-				
+	
+	$('#Eliminar').bind("Click",function(event){
+		if (!Navigator.notification.confirm("Borrar tabla?",""))
+		return;
+		db.transaction(function(ejecutar){
+			var SQL = "DROP TABLE Clientes";
+			ejecutar.executeSQL(SQL, undefined, function(){
+				navigator.notification.alert("Tabla borrada");
+			},error);
+			});//ejecutar	
+	});
 	},false);//ready
 
 });//document
