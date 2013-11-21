@@ -10,7 +10,7 @@ var db = openDatabase("Test", "1.0","Test",65535);
 	$('#Crear').bind("Click",function(event){
 		
 		db.transaction(function(ejecutar){
-			var SQL="CREATE TABLE Clientes(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, nombre VARCHAR(64) NOT NULL, apellido VARCHAR(100))"
+			var SQL="CREATE TABLE Clientes(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, nombre VARCHAR(64) NOT NULL, apellido VARCHAR(100))";
 	
 			ejecutar.executeSql(SQL, undefined, function(){
 				alert("Tabla Creada");
@@ -30,14 +30,14 @@ var db = openDatabase("Test", "1.0","Test",65535);
 			});//ejecutar		
 			});//clic eliminar
 			
-			$("#insertar").bind ("click", function (event)
+			$("#Insertar").bind ("click", function (event)
 {
-  var v_nombre = $("#nombre").val ();
-  var v_apellido = $("#apellido").val ();
+  var v_nombre = $("#Nombre").val ();
+  var v_apellido = $("#Apellido").val ();
   
   db.transaction (function (ejecutar) 
   {
-    var sql = "INSERT INTO clientes (nombre, apellido) VALUES (?, ?)";
+    var sql = "INSERT INTO Clientes (nombre, apellido) VALUES (?, ?)";
     ejecutar.executeSql (sql, [v_nombre, v_apellido], function ()
     { 
       alert ("Cliente Agregado");
