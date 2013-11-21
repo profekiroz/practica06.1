@@ -84,7 +84,7 @@ $("#listar").bind ("click", function (event)
       {
         var $contenido = $("#listado div:jqmData(role=content)");
         $contenido.html (a_html);
-        var $ul = $contentenido.find ("ul");
+        var $ul = $contenido.find ("ul");
         $ul.listview ();
       });
       
