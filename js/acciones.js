@@ -6,15 +6,15 @@ $(document).ready(function(e){
 		
 var db = openDatabase("Test", "1.0","Test",65535);
 
-alert("Ok");
+
 
 	$('#Crear').bind("click",function(event){
-		alert("crear");
+		
 		db.transaction(function(ejecutar){
 			var SQL="CREATE TABLE Clientes(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, nombre VARCHAR(64) NOT NULL, apellido VARCHAR(100))";
 	
 			ejecutar.executeSql(SQL, undefined, function(){
-				alert("Tabla Creada");
+				
 			},error);
 			});//ejecutar
 			});//crear
@@ -45,6 +45,8 @@ alert("Ok");
     }, error);
   });
 });
+	
+	//Listado
 	
 $("#listar").bind ("click", function (event)
 {
