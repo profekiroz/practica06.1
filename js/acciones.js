@@ -5,8 +5,10 @@ $(document).ready(function(e){
 		
 		
 var db=OpendataBase("Test", "1.0","Test",65535);
+alert("Listo");
 
 	$('#Crear').bind("Click",function(event){
+		alert("ok");
 		db.transaction(function(ejecutar){
 			var SQL="CREATE TABLE Clientes(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, nombre VARCHAR(64) NOT NULL, apellido VARCHAR(100))"
 	
@@ -17,6 +19,7 @@ var db=OpendataBase("Test", "1.0","Test",65535);
 			});//crear
 	
 	$('#Eliminar').bind("Click",function(event){
+		alert("Va");
 		if (!confirm("Borrar tabla?",""))
 		return;
 		db.transaction(function(ejecutar){
