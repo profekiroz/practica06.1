@@ -6,11 +6,11 @@ $(document).ready(function(e){
 		
 var db=OpendataBase("Test", "1.0","Test",65535);
 
-	$('#crear').bind("Click",function(event){
+	$('#Crear').bind("Click",function(event){
 		db.transaction(function(ejecutar){
 			var SQL="CREATE TABLE Clientes(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, nombre VARCHAR(64) NOT NULL, apellido VARCHAR(100))"
 	
-			ejecutar.executeSQL(SQL, undefined, function(){
+			ejecutar.executeSql(SQL, undefined, function(){
 				alert("Tabla Creada");
 			},error);
 			});//ejecutar
@@ -18,10 +18,10 @@ var db=OpendataBase("Test", "1.0","Test",65535);
 	
 	$('#Eliminar').bind("Click",function(event){
 		if (!confirm("Borrar tabla?",""))
-		return;;
+		return;
 		db.transaction(function(ejecutar){
 			var SQL = "DROP TABLE Clientes";
-			ejecutar.executeSQL(SQL, undefined, function(){
+			ejecutar.executeSql(SQL, undefined, function(){
 				alert("Tabla borrada");
 			},error);
 			});//ejecutar		
