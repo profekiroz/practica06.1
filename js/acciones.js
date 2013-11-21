@@ -6,9 +6,10 @@ $(document).ready(function(e){
 		
 var db = openDatabase("Test", "1.0","Test",65535);
 
+alert("Ok");
 
-	$('#Crear').bind("Click",function(event){
-		
+	$('#Crear').bind("click",function(event){
+		alert("crear");
 		db.transaction(function(ejecutar){
 			var SQL="CREATE TABLE Clientes(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, nombre VARCHAR(64) NOT NULL, apellido VARCHAR(100))";
 	
@@ -18,8 +19,8 @@ var db = openDatabase("Test", "1.0","Test",65535);
 			});//ejecutar
 			});//crear
 	
-	$('#Eliminar').bind("Click",function(event){
-	
+	$('#Eliminar').bind("click",function(event){
+	alert("eliminar");
 		if (!confirm("Borrar tabla?",""))
 		return;
 		db.transaction(function(ejecutar){
@@ -31,7 +32,7 @@ var db = openDatabase("Test", "1.0","Test",65535);
 			});//clic eliminar
 			
 			$("#Insertar").bind ("click", function (event)
-{
+{alert("insertar");
   var v_nombre = $("#Nombre").val ();
   var v_apellido = $("#Apellido").val ();
   
