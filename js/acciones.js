@@ -15,6 +15,8 @@ var db = openDatabase("Test", "1.0","Test",65535);
 	
 			ejecutar.executeSql(SQL, undefined, function(){
 				
+		alert("Tabla creada");
+				
 			},error);
 			});//ejecutar
 			});//crear
@@ -30,6 +32,8 @@ var db = openDatabase("Test", "1.0","Test",65535);
 			},error);
 			});//ejecutar		
 			});//clic eliminar
+			
+		//Insertar cliente
 			
 			$("#Insertar").bind ("click", function (event)
 {alert("insertar");
@@ -52,7 +56,7 @@ $("#listar").bind ("click", function (event)
 {
   db.transaction (function (ejecutar) 
   {
-    var sql = "SELECT * FROM clientes";
+    var sql = "SELECT * FROM Clientes";
 
     ejecutar.executeSql (sql, undefined,
 
