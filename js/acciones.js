@@ -58,16 +58,14 @@ $("#listar").bind ("click", function (event)
   {
     var sql = "SELECT * FROM Clientes";
 
-    ejecutar.executeSql (sql, undefined,
-
-    function (ejecutar, resultado)
+    ejecutar.executeSql (sql, undefined, function (ejecutar, resultado)
     {
       var a_html = "<ul>";
       if (resultado.rows.length)
       {
         for (var i = 0; i < resultado.rows.length; i++) 
         {
-          var fila = resultado.rows.item (i);
+          var fila = resultado.rows.item(i);
           var v_nombre = fila.nombre;
           var v_apellido = fila.apellido;
 		  var v_id = fila.id
